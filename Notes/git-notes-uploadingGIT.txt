@@ -16,5 +16,7 @@ steps to upload an existing folder to a new git repo:
             3. git commit -m"initial commit" 
 
             4. git remote add origin https://github.com/s2104591/laravel-001-hotel.git
+               git remote add origin https://github.com/s2104591/Udemey-001-DJango-A.git
+               
             5. git branch -M main
             6. git push -u origin main 

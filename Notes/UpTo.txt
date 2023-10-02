@@ -2,11 +2,11 @@ up to :
 005
 
 skipped to 44
-
+* = means need to still practice
 
 upto :
-Mon = 44, 45, 46, 47, 48, 51
-
+Mon     = 44, 45, 46, 47, 48, 51
+Tues    = 51, 52, 53* , 54
 
 
 
