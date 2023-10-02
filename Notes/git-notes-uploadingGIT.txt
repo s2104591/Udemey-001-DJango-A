@@ -1,0 +1,20 @@
+see git training for comprehensive notes
+
+
+steps to upload an existing folder to a new git repo:
+            as an example laravel-001-hotel  ...
+            
+            0. first create empty repo "laravel-001-hotel"
+              	make sure its empty ie no readme & no gitignore
+		NOTE- copy the line needed from GitPage for step4 below
+		
+
+
+            run 6 git commands:
+            1. git init
+            2. git add .
+            3. git commit -m"initial commit" 
+
+            4. git remote add origin https://github.com/s2104591/laravel-001-hotel.git
+            5. git branch -M main
+            6. git push -u origin main 
