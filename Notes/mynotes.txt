@@ -55,10 +55,47 @@ cd Udemey_django001
 python manage.py runserver 8000
 
 http://127.0.0.1:8000/myapp/
-http://127.0.0.1:8000/myapp/sports
+
 http://127.0.0.1:8000/myapp/2/6
 
+http://127.0.0.1:8000/myapp/1
+http://127.0.0.1:8000/myapp/sports
 
+http://127.0.0.1:8000/myapp/htmla
+http://127.0.0.1:8000/myapp/htmlb
+http://127.0.0.1:8000/myapp/variablea
+
+
+
+
+
+for blank html just type doc , enter
+
+
+actual
+C:\Users\USER\Downloads\Udemy2023\DJango\course001\Udemy-VSC-Django001\udemey_django001\udemey_django001\templates\myapp\example.html
+
+searching
+C:\Users\USER\Downloads\Udemy2023\DJango\course001\Udemy-VSC-Django001\udemey_django001\templates\myapp\example.html
+
+
+lecture 059:
+step 1: python manage.py startapp  <appname>
+step 2: python manage.py migrate
+step 3: inside settings.py :  INSTALLED_APPS = ['myapp.apps.MyappConfig', ...
+step 4: python manage.py makemigrations <appname>
+step 5: python manage.py migrate  (again)
+step 6: under <appname> directory create "templates" directory , and under templates directory create another <apppname> directory
+        <appname>
+            templates
+                <appname>
+step 7:      
+
+
+
+cd Udemey_django001
+python manage.py runserver 8000
+Exension in VS Code: DJango by Baptiste Darthenay, just for color syntax
 
 
 
