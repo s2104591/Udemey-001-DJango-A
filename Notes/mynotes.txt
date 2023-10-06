@@ -66,6 +66,10 @@ http://127.0.0.1:8000/myapp/htmlb
 http://127.0.0.1:8000/myapp/variablea
 
 
+cd Udemey_django001
+python manage.py runserver 8000
+
+http://127.0.0.1:8000/myapp/
 
 
 
@@ -93,8 +97,6 @@ step 7:
 
 
 
-cd Udemey_django001
-python manage.py runserver 8000
 Exension in VS Code: DJango by Baptiste Darthenay, just for color syntax
 
 

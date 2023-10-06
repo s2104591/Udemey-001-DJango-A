@@ -9,6 +9,18 @@ Mon     = 44, 45, 46, 47, 48, 51
 Tues    = 51, 52, 53* , 54, 56, 57, 58 
 wed     = 56, 57, 58, 59, 60*, 61, 62, 63,
 
+FRom now on, 1 day just listening  , next day practising 
+> L means listening day
+> P means practising day
+
+
+Thurs > L   = 63, 67, 68, 69, 71, 73
+Frid  > P   = 63, 65, 66, 67, 
+
+
+
+
+
 
 
 
