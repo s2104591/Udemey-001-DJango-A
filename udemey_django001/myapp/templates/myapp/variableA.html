@@ -8,7 +8,7 @@
 
     <h1>  Variable A </h1>
     <h2> fullname is {{firstname}} plus {{ surname}}    </h2>
-    <h2> all scores= {{scores}} </h2>
+    <h2> all scores list= {{scores}} </h2>
     <h3>  2nd score = {{scores.1 }}  </h3>
     <h3> dictval= {{ somedict.key  }}</h3>
     
@@ -16,6 +16,20 @@
     <h2> using filter for name length fullname is {{firstname | length  }} plus {{ surname | length}}    </h2>
     <h2> using filter for name capfirst {{firstname | lower | capfirst  }} plus {{ surname | capfirst}}    </h2>
     <a target="_blank" href="https://docs.djangoproject.com/en/4.2/ref/templates/builtins/" /> Documentation </a>
+
+    <h1> Loop Example 001 </h1>
+    {% for x in scores %}
+    <li>  {{ x }} </li>
+
+    {% endfor %}
+
+    {% if loggedin %}
+    <h1>  LOGGED IN </h1>
+    {% else %}
+    <h1>  NOT LOGGED IN </h1>
+    {% endif %}
+
+
 
 
 

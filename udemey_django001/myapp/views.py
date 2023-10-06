@@ -55,16 +55,19 @@ def html_002(request):
     # app level, ie html file in myapp/templates/myapp
     return render(request, "myapp/exampleB.html") 
 
-def variableA(request):
 
-    name={"firstname":"maRiano","surname":"riCo","scores":[90,70,60,100],'somedict':{"key" :"val"}}
+def lessons(request):
+    #return render(request, "myapp/variableA.html")
+    return render(request, "myapp/lessons.html") 
 
 
+def variableA(request):    
+    name={"firstname":"maRiano","surname":"riCo","scores":[90,70,60,100],'somedict':{"key" :"val"},'loggedin':True}
     return render(request, "myapp/variableA.html",context=name)
 
 
-
-
+def inheritence(request):    
+    return render(request, "myapp/inheritence.html")
     
 
 

@@ -2,12 +2,18 @@ from django.urls import path
 from . import views
 
 
-
+app_name="myapp"
 
 urlpatterns=[
+    
+    path("lessons",views.lessons),
+    path("variablea",views.variableA, name="nm-variablea"),
+    path("inheritence",views.inheritence, name="nm-inheritence"),
+    
+    
     path("htmlA",views.html_001),
     path("htmlB",views.html_002),
-    path("variablea",views.variableA),
+   
 
     
 
@@ -23,9 +29,17 @@ urlpatterns=[
 
     path("<int:pageno>",views.newsarticle_pageno,name="news-number"),
     path("<str:the_topic>",views.newsarticle_topic,name="news-topic"),
+
+
+    
+    
+
+
+]
+   
+
+  
    
     
 
 
-
-]
