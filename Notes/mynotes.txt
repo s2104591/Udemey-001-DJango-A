@@ -64,12 +64,14 @@ http://127.0.0.1:8000/myapp/sports
 http://127.0.0.1:8000/myapp/htmla
 http://127.0.0.1:8000/myapp/htmlb
 http://127.0.0.1:8000/myapp/variablea
+http://127.0.0.1:8000/myapp/lessons
 
 
 cd Udemey_django001
 python manage.py runserver 8000
 
 http://127.0.0.1:8000/myapp/
+http://127.0.0.1:8000/myapp/lessons
 
 
 

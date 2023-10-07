@@ -23,3 +23,7 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
 ]
+
+handler404="udemey_django001.views.errorpage"
+
+

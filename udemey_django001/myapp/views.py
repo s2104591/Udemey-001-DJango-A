@@ -70,6 +70,8 @@ def inheritence(request):
     return render(request, "myapp/inheritence.html")
     
 
+def errorexample(request):    
+    return render(request, "myapp/invvv.html")
 
 
 
