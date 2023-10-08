@@ -9,7 +9,7 @@ urlpatterns=[
     path("lessons",views.lessons),
     path("variablea",views.variableA, name="nm-variablea"),
     path("inheritence",views.inheritence, name="nm-inheritence"),
-    path("errorexample",views.errorexample, name="nm-errorexamplee"),
+    path("errorexample",views.errorexample, name="nm-errorexample"),
     
     
     path("htmlA",views.html_001),
@@ -37,6 +37,8 @@ urlpatterns=[
 
 
 ]
+
+
    
 
   

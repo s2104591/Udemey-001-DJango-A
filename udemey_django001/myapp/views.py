@@ -71,7 +71,7 @@ def inheritence(request):
     
 
 def errorexample(request):    
-    return render(request, "myapp/invvv.html")
-
+    #return render(request, "myapp/invvv.html")
+    return HttpResponse( "to create a 404 error just type an invalid address like http://127.0.0.1:8000/myapp/lllllessons")
 
 

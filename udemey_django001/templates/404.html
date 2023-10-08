@@ -7,10 +7,23 @@
     
 <body>
 
-<h1>Hello World! - Mariano Rico BASE HTML</h1>
+<h1>Hello World! - Mariano Rico ERROR PAGE HTML</h1>
 <p>Welcome to my first Django project!</p>
 
-<h1>Error Page </h1>
+<h1>MY CUSTOM Error Page  Inside Project Templates </h1>
+
+
+<li>inside templates folder: </li>
+file needs to be named 404.html
+
+<li> url.py :  </li>    
+handler404="udemey_django001.views.my_errorpage" 
+
+<li>views.py :  </li>
+def my_errorpage(request, exception):<br/>
+&nbsp return render (request, "404.html", status=404) 
+
+
 
 </body>
 

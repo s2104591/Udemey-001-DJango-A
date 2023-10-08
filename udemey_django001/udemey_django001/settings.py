@@ -26,11 +26,11 @@ print("Mariano, base-dir=",BASE_DIR)
 SECRET_KEY = 'django-insecure-20c(*@%ls+(h5$16#4l@im64ca)mfmmu$2o_wck9hxhf9%3^ka'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+#ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = []
-
-#ALLOWED_HOSTS = ["http://127.0.0.1:8000/"]
+DEBUG = False
+ALLOWED_HOSTS = ["127.0.0.1"]
 
 
 # Application definition
