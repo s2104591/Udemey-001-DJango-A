@@ -75,3 +75,9 @@ def errorexample(request):
     return HttpResponse( "to create a 404 error just type an invalid address like http://127.0.0.1:8000/myapp/lllllessons")
 
 
+def staticegg(request):    
+    return render(request, "myapp/staticegg.html")
+
+
+def databaseegg(request):    
+    return render(request, "myapp/databaseegg.html")

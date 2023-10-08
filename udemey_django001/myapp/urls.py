@@ -10,6 +10,11 @@ urlpatterns=[
     path("variablea",views.variableA, name="nm-variablea"),
     path("inheritence",views.inheritence, name="nm-inheritence"),
     path("errorexample",views.errorexample, name="nm-errorexample"),
+    path("staticegg",views.staticegg, name="nm-staticegg"),
+    path("databaseegg",views.databaseegg, name="nm-databaseegg"),
+
+
+
     
     
     path("htmlA",views.html_001),
