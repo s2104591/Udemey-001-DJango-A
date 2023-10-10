@@ -13,13 +13,65 @@
 <h1>Database Example Page  Inside MyApp </h1>
 
 
-<li> Note 1: python manage.py startapp officeapp</li>
-
-<li> Note 2:  python manage.py migrate  </li>    
-
-<li> Note 3:  officeapp | models.py  create a class <br/>reference https://docs.djangoproject.com/en/4.2/ref/models/fields/</li>
+<li> python manage.py startapp officeapp  </li>
+<li> settings register :  'officeapp.apps.OfficeappConfig',  </li>
+<li> officeapp | models.py  create a class <br/>reference https://docs.djangoproject.com/en/4.2/ref/models/fields/</li>
 
 
+<li >python manage.py makemigrations officeapp   (initialise)</li>
+<li> python manage.py migrate  (creates database )</li>    
+
+<li> python manage.py shell (shell to get data) </li>    
+
+    from officeapp.models import Employee <br/>
+    carl = Employee(name="Carl", age=20, salary=200.5)<br/>
+    carl.age<br/>
+    carl.save()<br/>
+
+    Employee.objects.create(name="Susan",age=26,salary=300.2)  # short hand <br/>
+    Employee.objects.create(name="Mariano",age=49,salary=700.2) <br/>
+    Employee.objects.create(name="Wayne",age=36,salary=400.2) <br/>
+ 
+    Employee.objects.all()<br/>
+    Employee.objects.filter(name="Mariano").get()<br/>
+    Employee.objects.get(pk=2)<br/>
+    Employee.objects.get(id=2)<br/>
+    
+
+    Employee.objects.filter(name__startswith="Mar").all()<br/>
+    Employee.objects.filter(salary__gte=400).all()<br/>
+
+    me=Employee.objects.filter(name="Mariano").get()<br/>
+    me.salary=800<br/>
+    me.save()   (.delete() to delete)<br/><br/>
+
+    <h1>Employees in database below: </h1>
+
+    {{employees}}
+
+    <h3>List </h3>
+    <ul>
+    {% for e in employees%}
+
+    <li> {{e}}  </li>
+
+    {% endfor %}
+    </ul>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li> Note x: </li>
 
 </body>
 

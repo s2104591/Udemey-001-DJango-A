@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpResponseRedirect
 from django.urls import reverse
 
+from officeapp import models
+
+
 
 
 
@@ -80,4 +83,10 @@ def staticegg(request):
 
 
 def databaseegg(request):    
-    return render(request, "myapp/databaseegg.html")
+    context= {"employees":models.Employee.objects.all()}
+    #v= models.EmployeeV.objects.all()
+
+    return render(request, "myapp/databaseegg.html",context=context)
+
+
+
