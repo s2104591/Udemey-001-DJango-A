@@ -51,10 +51,16 @@ conda deactivate
 
 Non Virtual Environment Udememy Django001
 
-cd Udemey_django001
-python manage.py runserver 8000
+    cd Udemey_django001
+    python manage.py startapp myapp
+    python manage.py startapp officeapp
+    python manage.py startapp carapp
 
-http://127.0.0.1:8000/myapp/
+
+
+    python manage.py runserver 8000
+
+    http://127.0.0.1:8000/myapp/
 
 http://127.0.0.1:8000/myapp/2/6
 

@@ -9,17 +9,28 @@ Mon     = 44, 45, 46, 47, 48, 51
 Tues    = 51, 52, 53* , 54, 56, 57, 58 
 wed     = 56, 57, 58, 59, 60*, 61, 62, 63,
 
-FRom now on, 1 day just listening  , next day practising 
-> @ means listening day
+FRom now on, 1 session just listening  , next session just practising 
+> x means listening day
 > $ means practising day
 
 
-Thurs   @   = 63, 67, 68, 69, 71, 73
-Frid    $   = 63, 65, 66, 67, 
-Sat     $   = 67 stuck
-Sund    $   = 67, 68, 69, 72, 73,
-Mon     @   = 73, 76, 78, 81, 82,     
-Tues    $   = 73, 81, 82,
+Thurs   x   =   63, 67, 68, 69, 71, 73
+Frid    $   =   63, 65, 66, 67, 
+Sat     $   =   67 stuck
+Sund    $   =   67, 68, 69, 72, 73,
+Mon     x   =   73, 76, 78, 81, 82,     
+Tues    $   =   73, 81, 82,
+Tues    x   =   82, 84, 85, 87, 89,
+
+    cd Udemey_django001
+    python manage.py runserver 8000
+    http://127.0.0.1:8000/car/listcars/
+    http://127.0.0.1:8000/myapp/lessons
+
+
+Wed     $   =   82,84
+
+   
 
 
 

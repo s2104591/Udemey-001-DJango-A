@@ -12,6 +12,8 @@ urlpatterns=[
     path("errorexample",views.errorexample, name="nm-errorexample"),
     path("staticegg",views.staticegg, name="nm-staticegg"),
     path("databaseegg",views.databaseegg, name="nm-databaseegg"),
+    path("carsite",views.carsite, name="nm-carsite"),
+
 
 
 

@@ -39,6 +39,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'officeapp.apps.OfficeappConfig',
+    'carapp.apps.CarappConfig',
+
+
     'myapp.apps.MyappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
