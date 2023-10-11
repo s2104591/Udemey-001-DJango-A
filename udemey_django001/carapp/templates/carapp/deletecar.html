@@ -6,4 +6,22 @@
 
     <h1>  Delete Car  </h1>
 
+    <diV class="container">
+        <form action="" method="POST">
+            {% csrf_token %} 
+            <div class="form-group">
+                <label for="pk">PK (Primary key) </label>
+                <input class="form-control" type="text"  id="pk" name="pk" />
+            </div>
+
+            <input type='submit' class="btn btn-primary">
+
+
+
+
+
+        </form>
+
+    </div>
+
 {% endblock %}

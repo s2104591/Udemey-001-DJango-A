@@ -5,6 +5,27 @@
 {% block content %}
 
     <h1>  Add Car  </h1>
+    <diV class="container">
+        <form action="" method="POST">
+            {% csrf_token %} 
+            <div class="form-group">
+                <label for="model">Model  </label>
+                <input class="form-control" type="text"  id="model" name="model" />
+            </div>
+
+            <input type='submit' class="btn btn-primary">
+
+
+
+
+
+        </form>
+
+    </div>
+
+
+
+
 
 {% endblock %}
 

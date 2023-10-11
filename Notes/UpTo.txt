@@ -27,8 +27,11 @@ Tues    x   =   82, 84, 85, 87, 89,
     http://127.0.0.1:8000/car/listcars/
     http://127.0.0.1:8000/myapp/lessons
 
+    python manage.py makemigrations carapp
+    python manage.py migrate
 
-Wed     $   =   82,84
+Wed     $   =   82,84, 85,
+
 
    
 
