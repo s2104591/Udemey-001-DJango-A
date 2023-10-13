@@ -37,7 +37,7 @@ Tues    @   =   82, 84, 85, 87, 89,
 Wed     $   upto=   82,84, 85, 86 , 
 Thurs   $   upto=   86, 97,88, 89,
 Thurs   @   upto=   89, 90, 91, 94,
-Frid    $   upto=   89, 90, 91,
+Frid    $   upto=   89, 90, 91, 92, 
 
 
     cd Udemey_django001
