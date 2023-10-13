@@ -40,6 +40,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'officeapp.apps.OfficeappConfig',
     'carapp.apps.CarappConfig',
+    'rentalcar.apps.RentalcarConfig',
 
 
     'myapp.apps.MyappConfig',

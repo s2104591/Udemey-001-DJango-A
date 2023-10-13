@@ -1,0 +1,43 @@
+
+
+
+{{ form.as_p }}
+
+{{formm.firstname.label_tag}} {{ formm.firstname }}
+
+{% for fld in form %}
+
+{{fld.label_tag}}{{fld}}
+
+{% endfor %}
+
+--------------
+
+<div class='container'>
+    <form method="POST">
+        {% csrf_token %}
+
+        
+
+        <!-- this line not working  -->
+        {{formm.surname.label_tag}} {{ formm.surname }}
+
+        <h1> for loop 001 </h1>
+        
+        <!-- works fine below -->
+        {% for fld in form %}
+
+        <div class='mb-3'>
+            {{fld.label_tag}}
+        <div>
+            {{fld}}
+
+        {% endfor %}
+
+
+        <br/><br/><br/>
+        <input type="submit" class= 'btn btn-primary'>
+        
+
+
+    </form>
