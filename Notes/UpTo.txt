@@ -62,6 +62,7 @@ Frid    $   upto=   89, 90, 91, 92,
 
 
 Sat     $   upto=   92, 93, 94,
+Sat     @   upto=   95,
 
 
 
