@@ -21,9 +21,15 @@ def rental_review(request):
 
     if request.method =="POST":
         form = ReviewForm(request.POST)
+        param   =   {"form":form}
         if form.is_valid ():
+            form.save()  # only is form is a  ModelForm
             print(form.cleaned_data)
             return redirect(reverse("rentalcar:nm-rental_thankyou") )
+        else:
+            return render(request, "rentalcar/review.html", context=param)
+            pass
+
 
 
 

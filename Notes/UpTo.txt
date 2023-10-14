@@ -42,10 +42,26 @@ Frid    $   upto=   89, 90, 91, 92,
 
     cd Udemey_django001
     python manage.py startapp rentalcar
+
+
+    python manage.py makemigrations
+    python manage.py migrate
+
     python manage.py runserver 8000
     http://127.0.0.1:8000/rental/rental_review
+    http://127.0.0.1:8000/admin
+
+    note there are a 4 types of forms :
+        HTML Forms - most work required 
+        DJango Forms -less work required Django does most work. Howver need to do some work saving to database
+        DJango Model Forms - when working with database, does alot of database work
+        Class Based Views - still to do, even better apparaently
 
 
+
+
+
+Sat     $   upto=   92, 93, 94,
 
 
 

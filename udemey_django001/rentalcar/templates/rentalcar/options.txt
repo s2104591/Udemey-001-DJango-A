@@ -11,6 +11,8 @@
 
 {% endfor %}
 
+<!-- indivually example  -->
+{{form.surname.label_tag}} {{ form.surname }}
 --------------
 
 <div class='container'>

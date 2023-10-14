@@ -35,8 +35,7 @@
         
                 
         
-                <!-- indivually  -->
-                {{form.surname.label_tag}} {{ form.surname }}
+                
         
                 <h1> for loop 021 </h1>
                 
@@ -47,6 +46,7 @@
                     {{fld.label_tag}}
                 <div>
                     {{fld}}
+                    {{fld.errors}}
         
                 {% endfor %}
         
