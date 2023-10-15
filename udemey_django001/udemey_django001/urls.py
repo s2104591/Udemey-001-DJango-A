@@ -21,6 +21,8 @@ urlpatterns = [
     path('myapp/', include("myapp.urls") ),
     path('car/', include("carapp.urls") ),
     path('rental/', include("rentalcar.urls") ),
+    path('school/', include("schoolapp.urls") ),
+
     
 
 

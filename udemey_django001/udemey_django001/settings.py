@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'officeapp.apps.OfficeappConfig',
     'carapp.apps.CarappConfig',
     'rentalcar.apps.RentalcarConfig',
+    'schoolapp.apps.SchoolappConfig',
 
 
     'myapp.apps.MyappConfig',

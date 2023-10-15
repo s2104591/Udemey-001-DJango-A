@@ -62,7 +62,20 @@ Frid    $   upto=   89, 90, 91, 92,
 
 
 Sat     $   upto=   92, 93, 94,
-Sat     @   upto=   95,
+Sat     @   upto=   95, 96,
+Sund    @   upto=   96, 98, 100, 102,
+
+    python manage.py startapp schoolapp
+    python manage.py makemigrations
+    python manage.py migrate
+    
+    python manage.py runserver 8000
+    http://127.0.0.1:8000/school
+    http://127.0.0.1:8000/admin
+
+Sund    $   upto=   94,        
+
+
 
 
 
