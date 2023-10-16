@@ -8,6 +8,9 @@ app_name="schoolapp"
 urlpatterns = [
     path("function",views.homeview,name="nm-homeviewfunction"),
     path("",views.HomeView.as_view(),name="nm-homeviewclass"),
+    path("thanks",views.Thanks.as_view(),name="nm-thanks"),
+    path("contact/",views.ContactForm.as_view(), name="nm-contact"),
+
     
 
 
