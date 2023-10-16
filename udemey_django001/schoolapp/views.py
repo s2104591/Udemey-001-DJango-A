@@ -1,7 +1,14 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView, FormView, CreateView
 from . import forms as fm
+from  schoolapp.models import Teacher
+
+
+## my notes
+##  TemplateView    -> direct link to a normal html file  eg thankyou.html ie no imput expected
+##  FormView        -> direct link to a form html (no database involved) where an input is expected eg contact.html
+##  CreateView(ModelForm)   ->    
 
 
 
@@ -38,7 +45,17 @@ class ContactForm(FormView):
         print("invalid", form['name'],form['message'])
         response = super().form_invalid(form)
         response
+
+        
         
     
 
     pass
+
+class TeacherCreateView(CreateView):
+    # note auto looks for teacher_form.html
+    model =Teacher
+    fields=['firstname', 'subject']
+    success_url=reverse_lazy("schoolapp:nm-thanks")
+    pass
+

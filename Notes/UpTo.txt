@@ -74,9 +74,10 @@ Sund    @   upto=   96, 98, 100, 102,
     python manage.py runserver 8000
     http://127.0.0.1:8000/school/   (homepage)
     http://127.0.0.1:8000/school/contact
-    http://127.0.0.1:8000/school/
+    http://127.0.0.1:8000/school/createteacher/
 
-Sund    $   upto=   94, 96, 97,
+
+Monday    $   upto=   94, 96, 97, 98,
        
 
 
