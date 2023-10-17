@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
-from django.views.generic import TemplateView, FormView, CreateView, ListView, DetailView
+from django.views.generic import TemplateView, FormView, CreateView, ListView, DetailView, UpdateView, DeleteView
 from . import forms as fm
 from  schoolapp.models import Teacher
 
@@ -72,4 +72,14 @@ class TeacherDetailView(DetailView):
     # note auto looks for teacher_detail.html
     model =Teacher
 
+class TeacherUpdateView(UpdateView):
+    # note uses same fomr as create view
+    model =Teacher
+    fields ="__all__"
+    success_url=reverse_lazy("schoolapp:nm-listteachers")
 
+
+class TeacherDeleteView(DeleteView):
+    # note auto uses teacher_confirm_delete.html
+    model =Teacher
+    success_url=reverse_lazy("schoolapp:nm-listteachers")

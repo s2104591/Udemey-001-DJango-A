@@ -10,8 +10,13 @@
 <h1>Hello World! - Mariano Rico TEacher List PAGE HTML</h1>
 
 {% for teacher in teacherlist %}
-  <li>  <a href="../detail_teacher/{{teacher.id}}"> {{teacher.firstname}} {{teacher.surname}} </a> </li>
+  <li>  <a href="../detail_teacher/{{teacher.id}}">See Details for: {{teacher.firstname}} {{teacher.surname}} </a> </li>
 
+  <ul>
+    <li>  <a href="../update_teacher/{{teacher.id}}"> Update  {{teacher.firstname}} {{teacher.surname}} </a> </li>
+    <li>  <a href="../delete_teacher/{{teacher.id}}"> Delete  {{teacher.firstname}} {{teacher.surname}} </a> </li>
+
+  </ul>
 
 
 {% endfor %}

@@ -78,6 +78,8 @@ Sund    @   upto=   96, 98, 100, 102,
     http://127.0.0.1:8000/school/listteachers/
 
     http://127.0.0.1:8000/school/detail_teacher/2
+    http://127.0.0.1:8000/school/update_teacher/2
+
 
 
 
