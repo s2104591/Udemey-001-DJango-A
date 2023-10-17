@@ -11,6 +11,8 @@ urlpatterns = [
     path("thanks/",views.Thanks.as_view(),name="nm-thanks"),
     path("contact/",views.ContactForm.as_view(), name="nm-contact"),
     path("createteacher/", views.TeacherCreateView.as_view(),name="nm-createteacher") ,
+    path("listteachers/", views.TeacherListView.as_view(),name="nm-listteachers") ,
+
 
 
 

@@ -7,6 +7,7 @@ from django.contrib import admin
 
 # Create your models here.
 # note I explictly registered Teacher to the admin , unlike prevuiously
+# https://docs.djangoproject.com/en/4.2/ref/contrib/admin/
 
 
 class Teacher(models.Model):

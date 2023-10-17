@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
-from django.views.generic import TemplateView, FormView, CreateView
+from django.views.generic import TemplateView, FormView, CreateView, ListView
 from . import forms as fm
 from  schoolapp.models import Teacher
 
@@ -58,4 +58,12 @@ class TeacherCreateView(CreateView):
     fields=['firstname', 'subject']
     success_url=reverse_lazy("schoolapp:nm-thanks")
     pass
+
+class TeacherListView(CreateView):
+    # note auto looks for teacher_list.html
+    model =Teacher
+    context_object_name="teacherlist"
+    queryset= Teacher.objects.all()
+    
+
 
