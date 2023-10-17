@@ -77,9 +77,12 @@ Sund    @   upto=   96, 98, 100, 102,
     http://127.0.0.1:8000/school/createteacher/
     http://127.0.0.1:8000/school/listteachers/
 
+    http://127.0.0.1:8000/school/detail_teacher/2
+
+
 
 Monday    $   upto=   94, 96, 97, 98,
-Tues      $   upto=   98,      
+Tues      $   upto=   98, 100,     
        
 
 
