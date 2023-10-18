@@ -18,6 +18,9 @@ class Teacher(models.Model):
     def __str__(self):
         return f"{self.firstname} {self.surname}  teaches {self.subject}"
 
+
+# note (realised later) should just register model in schoolapp/admin.py like other models in other apps
+# but this works also
 class TeacherAdmin(admin.ModelAdmin):
     pass
 

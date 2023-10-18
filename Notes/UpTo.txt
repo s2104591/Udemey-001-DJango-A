@@ -55,7 +55,10 @@ Frid    $   upto=   89, 90, 91, 92,
         HTML Forms - most work required 
         DJango Forms -less work required Django does most work. Howver need to do some work saving to database
         DJango Model Forms - when working with database, does alot of database work
-        Class Based Views - still to do, even better apparaently
+        look at http://127.0.0.1:8000/rental/rental_review
+        
+        Class Based Views - even better 
+        look at http://127.0.0.1:8000/school/createteacher/
 
 
 
@@ -83,8 +86,17 @@ Sund    @   upto=   96, 98, 100, 102,
 
 
 
-Monday    $   upto=   94, 96, 97, 98,
-Tues      $   upto=   98, 100,     
+Monday    $     upto=   94, 96, 97, 98,
+Tues      $     upto=   98, 100, 102,
+Tues      @     upto=   102, 104
+Wed       @     upto=   104,105, 107, 109, 114, finished
+wed       @(repeat) upto=103, 104,105,106,
+
+
+
+
+
+
        
 
 
