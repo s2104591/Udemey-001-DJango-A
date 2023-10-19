@@ -52,11 +52,18 @@ class ContactForm(FormView):
 
     pass
 
+
+# http://127.0.0.1:8000/school/createteacher/
 class TeacherCreateView(CreateView):
-    # note auto looks for teacher_form.html
+    # note auto looks for teacher_form.html but can specify this
+    # with template_name= ..   as below
     model =Teacher
     fields=['firstname', 'surname','subject']
     success_url=reverse_lazy("schoolapp:nm-thanks")
+    
+    # default = "schoolapp/teacher_form.html" 
+    template_name="schoolapp/teacher_form_mine.html"
+
     pass
 
 class TeacherListView(ListView):

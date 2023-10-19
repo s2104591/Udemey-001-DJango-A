@@ -56,10 +56,14 @@ Frid    $   upto=   89, 90, 91, 92,
         DJango Forms -less work required Django does most work. Howver need to do some work saving to database
         DJango Model Forms - when working with database, does alot of database work
         look at http://127.0.0.1:8000/rental/rental_review
+        note still need to code views.py  ... if else etc 
+        need to give explicit template name 
         
         Class Based Views - even better 
         look at http://127.0.0.1:8000/school/createteacher/
-
+        note no coding in views.py 
+        just assigning member variables 
+        template name is implicit
 
 
 
@@ -91,6 +95,8 @@ Tues      $     upto=   98, 100, 102,
 Tues      @     upto=   102, 104
 Wed       @     upto=   104,105, 107, 109, 114, finished
 wed       @(repeat) upto=103, 104,105,106,
+Thurs     @(repeat) upto=106, 108, 111,
+
 
 
 
