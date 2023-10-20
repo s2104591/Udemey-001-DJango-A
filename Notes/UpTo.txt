@@ -100,8 +100,11 @@ Thurs     @(repeat) upto=106, 108, 111,
 
 cd library
 python manage.py runserver 8000
+python manage.py createsuperuser
+pwd =libadmin
 
-Frid      $     upto=   102,
+Frid      $     upto=   102, 104,
+
 
 
 
