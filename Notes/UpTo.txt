@@ -98,6 +98,14 @@ wed       @(repeat) upto=103, 104,105,106,
 Thurs     @(repeat) upto=106, 108, 111,
 
 
+cd library
+python manage.py runserver 8000
+
+Frid      $     upto=   102,
+
+
+
+
 
 
 
