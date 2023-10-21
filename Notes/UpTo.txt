@@ -104,13 +104,17 @@ python manage.py createsuperuser
 
 user, pwd =libadmin
 
-    http://127.0.0.1:8000/catalog/createbook
     http://127.0.0.1:8000/
-    http://127.0.0.1:8000/admin
+    http://127.0.0.1:8000/catalog/mine
 
+    http://127.0.0.1:8000/catalog/createbook    
+    http://127.0.0.1:8000/admin
+    http://127.0.0.1:8000/catalog/requireslogin 
+    
 
 Frid      $     upto=   102, 104, 106,
-Sat       $     upto=   106, 107, 108,
+Sat       $     upto=   106, 107, 108, 109,
+
 
 
 

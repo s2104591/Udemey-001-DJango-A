@@ -11,5 +11,13 @@
     <p>Num Instances: {{num_instances}}</p>
     <p>Num Available: {{num_instances_avail}}</p>
 
+    {% if user.is_authenticated %}
+        <h1>  002 You are Logged In   authenticated={{ user.is_authenticated }}  username= {{ user.get_username}} </h1>
+    {%  else %}
+        <h1>  002 You are Not Logged In   {{ user.is_authenticated }} </h1>
+
+
+    {% endif %}
+
 </body>
 </html>

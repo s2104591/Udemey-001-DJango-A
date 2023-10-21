@@ -1,1 +1,14 @@
-<h1>LOGGED IN USERS ONLY!!</h1>
+<h1>You are seeing this beacuse you are logged in</h1>
+
+lecture 108 <br/>
+<h1> for function based views use decorators </h1> 
+from django.contrib.auth.decorators import login_required <br/>
+@login_required 
+
+<h1>  for class based views restrictions use LoginRequiredMixin</h1>
+class BookCreate(LoginRequiredMixin,CreateView): <br/>
+http://127.0.0.1:8000/accounts/login/?next=/catalog/createbook/
+
+
+<h1>to logout and see  </h1>  
+http://127.0.0.1:8000/catalog/

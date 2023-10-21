@@ -45,8 +45,8 @@ def index(request):
     return render(request,'appcatalog/index.html',context=context)
 
 
-#class BookCreate(LoginRequiredMixin,CreateView): 
-class BookCreate(CreateView): 
+class BookCreate(LoginRequiredMixin,CreateView): 
+#class BookCreate(CreateView): 
 
     #book_form.html
     model = Book 
@@ -56,19 +56,19 @@ class BookDetail(DetailView):
     model = Book 
 
 @login_required 
-def my_view(request):
-    return render(request,'catalog/my_view.html')
+def requireslogin(request):
+    return render(request,'appcatalog/my_view.html')
 
 
 class SignUpView(CreateView):
     form_class = UserCreationForm 
     success_url = reverse_lazy('login')
-    template_name = 'catalog/signup.html'
+    template_name = 'appcatalog/signup.html'
 
 class CheckedOutBooksByUserView(LoginRequiredMixin,ListView):
     # List all BookInstances BUT I will filter based off currently logged in user session
     model = BookInstance 
-    template_name = 'catalog/profile.html'
+    template_name = 'appcatalog/profile.html'
     paginate_by = 5 # 5 book instances per page
 
     def get_queryset(self):
