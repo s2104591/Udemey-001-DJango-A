@@ -1,13 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Book,Author,BookInstance,Genre,Language 
 from django.views.generic import CreateView,DetailView,ListView 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin 
 from django.contrib.auth.forms import UserCreationForm 
-from django.urls import reverse_lazy 
+from django.urls import reverse_lazy, reverse 
 
-
+from django.contrib.auth.models import User
 
 #http://127.0.0.1:8000/
 
@@ -45,8 +45,31 @@ def index(request):
     return render(request,'appcatalog/index.html',context=context)
 
 
+
+def mycreatebook(request):    
+    #example
+    #return redirect (reverse('carapp:nm-listcars'))
+    #return redirect(reverse('appcatalog:nm-createbook'))
+    print("**************")
+    uname = request.user.username
+    ugroup= request.user.groups.all()
+    ustaff=request.user.is_staff
+
+    print("staff",ustaff)
+    print("current user=",uname)
+    print("usergroup=",ugroup)
+    
+    if ustaff:
+        return redirect(reverse('nm-createbook'))
+    else:
+        return redirect(reverse('nm-index'))
+
+
+
+
 class BookCreate(LoginRequiredMixin,CreateView): 
 #class BookCreate(CreateView): 
+    
 
     #book_form.html
     model = Book 
@@ -57,7 +80,23 @@ class BookDetail(DetailView):
 
 @login_required 
 def requireslogin(request):
+    #  http://127.0.0.1:8000/catalog/requireslogin 
+    
+    # my experimanting
+    # user =User.objects.get() 
+    # print("user-name" , user.get_username )
+
     return render(request,'appcatalog/my_view.html')
+
+
+class MarianoSignUpView(CreateView):
+    model=User
+    success_url = reverse_lazy('login')
+    template_name = 'appcatalog/signup.html'
+    fields="__all__"
+    #fields=['username','password']
+
+
 
 
 class SignUpView(CreateView):

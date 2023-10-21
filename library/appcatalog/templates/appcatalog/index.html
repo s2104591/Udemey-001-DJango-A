@@ -9,6 +9,12 @@
     <h1>HOMEPAGE</h1>
     <p>Total Books: {{num_books}}</p>
     <p>Num Available: {{num_instances_avail}}</p>
+
+    <h1> reqeust.path =  {{ request.path }}  </h1>
+    
+    <h1> note next = createbook </h1>
+
+    
     {% if user.is_authenticated %}
         <p> You are Logged In</p>
         <p>Welcome: {{user.get_username}}</p>

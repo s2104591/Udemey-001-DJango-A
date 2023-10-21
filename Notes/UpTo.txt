@@ -107,14 +107,27 @@ user, pwd =libadmin
     http://127.0.0.1:8000/
     http://127.0.0.1:8000/catalog/mine
 
-    http://127.0.0.1:8000/catalog/createbook    
+    http://127.0.0.1:8000/catalog/createbook
+    http://127.0.0.1:8000/catalog/mycreatebook
+
     http://127.0.0.1:8000/admin
     http://127.0.0.1:8000/catalog/requireslogin 
+
+    http://127.0.0.1:8000/catalog/signup
+    
+    mariano002 password002
     
 
 Frid      $     upto=   102, 104, 106,
-Sat       $     upto=   106, 107, 108, 109,
+Sat       $     upto=   106, 107, 108, 109, 110,
 
+http://127.0.0.1:8000/catalog/
+
+in index.html specify next page on 'login Here' click examples:
+<a href="{% url 'login' %}?next={% url 'createbook' %}">LOGIN HERE</a>
+<a href="{% url 'login' %}?next={{request.path}}">LOGIN HERE</a>
+
+{{form.as_p}}
 
 
 

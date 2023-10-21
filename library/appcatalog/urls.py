@@ -8,8 +8,10 @@ from . import views
 
 urlpatterns = [
     path('',views.index,name='index'),
-    path('mine',views.indexMine,name='index'),
-    path('createbook/',views.BookCreate.as_view(),name='createbook'),
+    path('mine',views.indexMine,name='nm-index'),
+    path('createbook/',views.BookCreate.as_view(),name='nm-createbook'),
+    path('mycreatebook/',views.mycreatebook,name='nm-mycreatebook'),
+
     path('book/<int:pk>/',views.BookDetail.as_view(),name='book_detail'),
     path('requireslogin',views.requireslogin,name='nm-requireslogin'),
     path('signup/',views.SignUpView.as_view(),name='signup'),
