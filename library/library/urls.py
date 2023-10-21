@@ -22,4 +22,5 @@ urlpatterns = [
     path('catalog/',include('appcatalog.urls') ),
     path('admin/', admin.site.urls),
     path('', RedirectView.as_view(url="catalog/")), 
+    path("accounts/",include("django.contrib.auth.urls") ), # automatically adds acounts/login plus.. see lecture 107
 ]

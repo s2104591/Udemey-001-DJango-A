@@ -101,9 +101,19 @@ Thurs     @(repeat) upto=106, 108, 111,
 cd library
 python manage.py runserver 8000
 python manage.py createsuperuser
-pwd =libadmin
 
-Frid      $     upto=   102, 104,
+user, pwd =libadmin
+
+    http://127.0.0.1:8000/catalog/createbook
+    http://127.0.0.1:8000/
+    http://127.0.0.1:8000/admin
+
+
+Frid      $     upto=   102, 104, 106,
+Sat       $     upto=   106, 107, 108,
+
+
+
 
 
 
