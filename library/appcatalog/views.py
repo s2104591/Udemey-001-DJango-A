@@ -45,6 +45,14 @@ def index(request):
     return render(request,'appcatalog/index.html',context=context)
 
 
+def testa(request):
+    dictparam ={ 'message':"Hello 200"}
+
+    return render(request,'appcatalog/testa.html',context=dictparam)
+
+
+    
+
 
 def mycreatebook(request):    
     #example

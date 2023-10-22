@@ -17,6 +17,10 @@ urlpatterns = [
     path('signup/',views.SignUpView.as_view(),name='signup'),
     path('marianosignup/',views.MarianoSignUpView.as_view(),name='signup'),
 
+    path('profile/',views.CheckedOutBooksByUserView.as_view(),name='profile'),
 
-    path('profile/',views.CheckedOutBooksByUserView.as_view(),name='profile') 
+    path('testa/',views.testa,name='nm-testa'),
+    
+
+
 ]
