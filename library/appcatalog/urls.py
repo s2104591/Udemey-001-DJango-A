@@ -15,5 +15,8 @@ urlpatterns = [
     path('book/<int:pk>/',views.BookDetail.as_view(),name='book_detail'),
     path('requireslogin',views.requireslogin,name='nm-requireslogin'),
     path('signup/',views.SignUpView.as_view(),name='signup'),
+    path('marianosignup/',views.MarianoSignUpView.as_view(),name='signup'),
+
+
     path('profile/',views.CheckedOutBooksByUserView.as_view(),name='profile') 
 ]

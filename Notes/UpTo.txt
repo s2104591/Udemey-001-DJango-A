@@ -129,6 +129,13 @@ in index.html specify next page on 'login Here' click examples:
 
 {{form.as_p}}
 
+for $ 100 credit:
+www.linode.com/lp/try/?ifso=pierian
+
+windows:
+manage optional feaures
+
+
 
 
 
