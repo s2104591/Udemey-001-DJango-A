@@ -98,8 +98,11 @@ wed       @(repeat) upto=103, 104,105,106,
 Thurs     @(repeat) upto=106, 108, 111,
 
 
+django-admin startproject library
 cd library
+python manage.py startapp catalog
 python manage.py runserver 8000
+
 python manage.py createsuperuser
 
 user, pwd =libadmin
@@ -134,6 +137,28 @@ www.linode.com/lp/try/?ifso=pierian
 
 windows:
 manage optional feaures
+
+
+----------------  My Practice ------------------
+
+    django-admin startproject Mariano_Project001
+    cd Mariano_Project001
+    python manage.py startapp customer
+
+    python manage.py makemigrations
+    python manage.py migrate
+
+    python manage.py createsuperuser
+    user admincustomer
+    
+    python manage.py runserver 8000
+    http://127.0.0.1:8000/customer/one
+
+
+
+
+
+
 
 
 
