@@ -98,14 +98,16 @@ wed       @(repeat) upto=103, 104,105,106,
 Thurs     @(repeat) upto=106, 108, 111,
 
 
-django-admin startproject library
-cd library
-python manage.py startapp catalog
-python manage.py runserver 8000
+    django-admin startproject library
+    cd library
+    python manage.py startapp catalog
+    python manage.py runserver 8000
 
-python manage.py createsuperuser
+    python manage.py createsuperuser
 
 user, pwd =libadmin
+    cd library
+    python manage.py runserver 8000
 
     http://127.0.0.1:8000/
     http://127.0.0.1:8000/catalog/mine
@@ -124,7 +126,7 @@ user, pwd =libadmin
 Frid      $     upto=   102, 104, 106,
 Sat       $     upto=   106, 107, 108, 109, 110,
 
-http://127.0.0.1:8000/catalog/
+    http://127.0.0.1:8000/catalog/
 
 in index.html specify next page on 'login Here' click examples:
 <a href="{% url 'login' %}?next={% url 'createbook' %}">LOGIN HERE</a>
@@ -142,6 +144,7 @@ manage optional feaures
 ----------------  My Practice ------------------
 
     django-admin startproject Mariano_Project001
+    
     cd Mariano_Project001
     python manage.py startapp customer
 
@@ -149,10 +152,11 @@ manage optional feaures
     python manage.py migrate
 
     python manage.py createsuperuser
-    user admincustomer
+    user adminadmin
     
     python manage.py runserver 8000
-    http://127.0.0.1:8000/customer/one
+    http://127.0.0.1:8000/customer/two
+
 
 
 
