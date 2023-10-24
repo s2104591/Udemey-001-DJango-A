@@ -76,11 +76,14 @@ def createcustomer(request):
         if form.is_valid():
                         
             fname=request.POST['firstname']
+            password=request.POST['password']
+            passwordconfirm=request.POST['passwordconfirm']
+
             if customer_exists(fname):
                 message=f"{fname} already exists  - 002"
                 return render (request,'customer/createcustomer1.html', context= {'form':form,"message":message} )
             else:
-                newcust=CustomerModel(firstname=fname )
+                newcust=Customer(firstname=fname, password=password, passwordconfirm=passwordconfirm )
                 newcust.save()
                 print("new customer saved, firstname=", newcust.firstname, len(newcust.firstname) )
                 return redirect(reverse("customer:nm-thankyou" ))

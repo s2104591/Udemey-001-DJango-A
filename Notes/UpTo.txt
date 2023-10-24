@@ -143,19 +143,34 @@ manage optional feaures
 
 ----------------  My Practice ------------------
 
-    django-admin startproject Mariano_Project001
+    stuffed up Mariano_Project001 database 
+    Mariano_Project002 okay
+    created Mariano_Project002 plus app then copied files across
     
-    cd Mariano_Project001
+    note when copying files across works fine.
+    But in settings.py search 001 and replace to 002
+
+    ---------------------------
+
+    django-admin startproject Mariano_Project002
+    cd Mariano_Project002
     python manage.py startapp customer
 
     python manage.py makemigrations
     python manage.py migrate
 
     python manage.py createsuperuser
-    user adminadmin
+    user adminadmin1
     
     python manage.py runserver 8000
     http://127.0.0.1:8000/customer/two
+
+    to remove and recreate database
+    rm db.sqlite3  also remove files in migrations folder
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py createsuperuser
+
 
 
 

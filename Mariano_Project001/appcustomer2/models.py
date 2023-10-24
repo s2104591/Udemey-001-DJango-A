@@ -1,9 +1,11 @@
+
+
 from django.db import models
 
 # Create your models here.
 
 
-class Customer(models.Model):
+class Customer2(models.Model):
     firstname = models.CharField(max_length=200)
     username = models.CharField(max_length=100,unique=False)
   

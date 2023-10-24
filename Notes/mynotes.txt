@@ -110,6 +110,8 @@ step 7:
 
 Exension in VS Code: DJango by Baptiste Darthenay, just for color syntax
 
+look in MyNotes Folder especially at UpTo.txt for extra notes
+
 
 
 
