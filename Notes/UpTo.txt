@@ -164,6 +164,8 @@ manage optional feaures
     
     python manage.py runserver 8000
     http://127.0.0.1:8000/customer/two
+    http://127.0.0.1:8000/customer/three
+
 
     to remove and recreate database
     rm db.sqlite3  also remove files in migrations folder
