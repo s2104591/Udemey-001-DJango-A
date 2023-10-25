@@ -151,7 +151,7 @@ def getCode(key):
     return key[colindex:]    
 
 
-def Go(incNASDAQ=True, incNYSE=True ):
+def Go(incNASDAQ=True, incNYSE=True, maxcount=24 ):
 
     mydict=[]
     if incNASDAQ and incNYSE:
@@ -186,32 +186,38 @@ def Go(incNASDAQ=True, incNYSE=True ):
         count+=1
 
     df=pd.DataFrame( {"Symbol":code_list, "RSI":val_list }) 
-    df_sorted = df.sort_values(by=['RSI', 'Symbol'], ascending=[False, True])
-    #print(df_sorted.head() )
-    return df_sorted
+    df_sorted = df.sort_values(by=['RSI', 'Symbol'], ascending=[False, True]).round(1)
+
+    
+    print("results, head "+str(maxcount) )    
+    print(df_sorted.head(maxcount) )
+
+    resultcodes=list(df_sorted['Symbol'])
+    resultrsi=list(df_sorted['RSI'])
+    
+    #print("result---")
+    #print(resultcodes)
+    
+    count=0
+    strlist=","
+    for i in range(maxcount):
+        strlist= strlist +resultcodes[i] +","+str(resultrsi[i])+","
+        count+=1
+        if count==10:
+            strlist+="\n"
+            count=0
+
+
+    print("\n\n",strlist)
+    return "finished"
 
 
 
 #------------------------------
 
-#print( get_SP500_Codes() )
+if __name__ =="__main__":
+    Go(incNASDAQ=True, incNYSE=True, maxcount=40)
 
-
-dfGo=Go(incNASDAQ=True, incNYSE=True)
-
-print("results, head 20")
-print( dfGo.head(20) )
-resultcodes=dfGo['Symbol']
-
-count,maxcount=0,24
-strlist=","
-for r in resultcodes:
-    strlist= strlist +r +","
-    count+=1
-    if count==maxcount:
-        break
-
-print("\n\n",strlist)
 
 
 
