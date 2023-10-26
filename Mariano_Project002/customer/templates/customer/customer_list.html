@@ -1,0 +1,16 @@
+
+
+<h1> 
+      Customer List 004
+
+</h1>
+    
+
+<ul>
+    {% for cus in  customerlist %}
+          <li> <a href="/customer/update/{{ cus.id }}"> firstname= {{ cus.firstname }} </a> </li>
+          
+          
+    {% endfor %}
+
+</ul>

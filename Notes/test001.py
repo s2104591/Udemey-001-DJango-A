@@ -7,7 +7,7 @@ strresult,dfresult= toolsTA.Go(incNASDAQ=True, incNYSE=True, maxcount=40, savefi
 
 print(reccomend)
 print(strresult)
-print(dfresult.head(10))
+print(dfresult.head(20))
 
 
 

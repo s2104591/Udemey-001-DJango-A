@@ -1,13 +1,14 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.urls import reverse_lazy, reverse 
 
-from django.views.generic import CreateView,DetailView,ListView 
+from django.views.generic import CreateView,DetailView,ListView, UpdateView 
 from django.forms import Textarea
+from .models import Customer
 
 
 
 
-from .forms import CustomerForm
+from .forms import CustomerForm, CustomerFormAll
 from .models import Customer
 
 # Create your views here.
@@ -24,6 +25,18 @@ def customer_exists(fname):
     return count>=1
 
 
+
+class CustomerUpdate(UpdateView):
+
+        #form_class = CustomerFormAll 
+        model=Customer
+        fields ="__all__"  
+        success_url= reverse_lazy("customer:nm-customer-list")
+        template_name='customer/updatecustomer.html'
+
+
+
+
 # method 1 of creating cutomer with validation - using Class Based Views 
 # note only need to use 1 method, Classed Based Views recommended
 class CustomerCreate(CreateView):
@@ -31,7 +44,8 @@ class CustomerCreate(CreateView):
     #form = CustomerForm(request.POST) 
     #form_class = CustomerForm
 
-    form_class = CustomerForm # optional but recommended since allows greater control example text area for comments
+    # optional but recommended since allows greater control example text area for comments
+    form_class = CustomerForm 
 
     #model= CustomerModel     # optional if specifying form_class, otherwise required
     #fields ="__all__"   # not allowed if specifying form_class, otherwise required
@@ -41,7 +55,9 @@ class CustomerCreate(CreateView):
     template_name='customer/createcustomer2.html'
     #failure_url = 'customer/sorry.html'
 
-    def form_valid(self,form):        
+    def form_valid(self,form):    
+
+        print("***  form valid print")    
         fname    = form.cleaned_data['firstname'].strip()
         password = form.cleaned_data['password'].strip()
         confirm  = form.cleaned_data['passwordconfirm'].strip()
@@ -55,12 +71,34 @@ class CustomerCreate(CreateView):
 
 
         else:
+            # this is where the form is passed into template
+            print("super call form")
             return super().form_valid(form)
         
             #return super().form_invalid(form)
             
 
     pass
+
+
+
+class CustomerList(ListView):
+    #form_class = CustomerFormAll
+    model=Customer
+    queryset=Customer.objects.all()
+
+    template_name="customer/customer_list.html"
+    
+    # if not showing change to default 
+    # note by default="object_list"
+    context_object_name="customerlist" 
+
+
+
+class CustomerDetail(DetailView):
+    model=Customer
+
+
 
     
 
