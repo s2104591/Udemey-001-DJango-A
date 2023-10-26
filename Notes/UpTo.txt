@@ -164,8 +164,10 @@ manage optional feaures
     
     python manage.py runserver 8000
     http://127.0.0.1:8000/customer/two
-    http://127.0.0.1:8000/customer/classReg
-    
+    http://127.0.0.1:8000/customer/register
+    http://127.0.0.1:8000/customer/list
+
+
 
 
     to remove and recreate database
