@@ -5,6 +5,8 @@ import datetime
 
 from tradingview_ta import *
 
+global_dict_codes={}
+
 
 
 def get_multiple_NYSE():
@@ -68,19 +70,51 @@ def get_RSI_Single(symbol="TSLA", screener='america',exchange="NASDAQ"):
     result= fetchAnalysis_Single(symbol,screener,exchange).indicators['RSI'] 
     return result
 
+def get_Summary_Single(symbol="TSLA", screener='america',exchange="NASDAQ"):
+    summary = fetchAnalysis_Single(symbol,screener,exchange).summary 
+    print(symbol+" Summary\n",summary)
+    return summary
+
+
+
+
+
 
 def get_SP400_Codes():
-    return get_NYSE_Codes(filename="SP400-Oct25.csv")
+    result= get_NYSE_Codes(filename="SP400-Oct25.csv")
+    updateDictionary(result,'400')
+    return result
 
 def get_SP600_Codes():
-    return get_NYSE_Codes(filename="SP600-Oct25.csv")
+    result= get_NYSE_Codes(filename="SP600-Oct25.csv")
+    updateDictionary(result,'600')
+    return result
 
 def get_SP800_Codes():
-    return get_NYSE_Codes(filename="SP800-Oct25.csv")
+    result= get_NYSE_Codes(filename="SP800-Oct25.csv")
+    updateDictionary(result,'800')
+    return result
+    
+def get_SP8002_Codes():    
+    result= get_NYSE_Codes(filename="SP8002-Oct25.csv")
+    updateDictionary(result,'800')
+    return result
 
 
 def get_SP500_Codes():
-    return get_NYSE_Codes(filename="SP500-Oct25.csv")
+    result= get_NYSE_Codes(filename="SP500-Oct25.csv")
+    updateDictionary(result,'500')
+    return result
+
+def updateDictionary(codelist=[], market='500'):
+    global global_dict_codes
+    
+    for c in codelist:
+        if global_dict_codes.get(c)==None: 
+            global_dict_codes[c]=market
+        pass
+    pass
+
 
 
 def get_NYSE_Codes_Merged():
@@ -88,6 +122,8 @@ def get_NYSE_Codes_Merged():
     result.extend(get_SP400_Codes() ) 
     result.extend(get_SP600_Codes() ) 
     result.extend(get_SP800_Codes() ) 
+    result.extend(get_SP8002_Codes() ) 
+
 
 
     return result
@@ -117,6 +153,7 @@ def get_NYSE_Codes(filename="SP500-Oct25.csv"):
 def get_Nasdaq_Codes():
     df=pd.read_csv("nasdaq-Oct25.csv") 
     result= list( df.Symbol )
+    updateDictionary(result,'700')
 
     return result
 
@@ -129,8 +166,8 @@ def printTimeStr():
     print("\n","*** TIME=",strTime,"\n")  
 
 
-
-def get_All():
+# too slow
+def get_All_Individually():
     codes=get_Nasdaq_Codes()
     count=0
     printTimeStr()
@@ -146,12 +183,24 @@ def get_All():
 
     printTimeStr()
 
-def getCode(key):
+def getCleanCode(key):
     colindex=key.find(":")+1
-    return key[colindex:]    
+    return key[colindex:]  
+
+def printDictionary(whichMT='500', maxcount=10):
+    count=0
+    for k in global_dict_codes:
+        mt=global_dict_codes[k]
+        if mt==whichMT:
+            print(k, mt)
+            count+=1
+        if count==maxcount:
+            break
+        pass
 
 
-def Go(incNASDAQ=True, incNYSE=True, maxcount=24 ):
+
+def Go(incNASDAQ=True, incNYSE=True, maxcount=24, savefile="Recommend-Oct25.csv",method=1 ):
 
     mydict=[]
     if incNASDAQ and incNYSE:
@@ -171,29 +220,49 @@ def Go(incNASDAQ=True, incNYSE=True, maxcount=24 ):
     
     code_list=[]
     val_list=[]
+    markets=[]
 
     count=0
     for k in mydict:
         val=mydict[k]
         if val != None:
-            val=mydict[k].indicators['RSI']
-            code=getCode(k)
+
+            if method==1:  
+                val=mydict[k].indicators['RSI']
+            elif method==2:
+                summary=mydict[k].summary
+                val=summary['BUY']-summary['SELL'] 
+            else:
+                val=0       
+            
+            code=getCleanCode(k)
 
             val_list.append(val)
             code_list.append(code)
+            markets.append(global_dict_codes.get(code))
+
             
             #print(count,k,code ,val)
         count+=1
 
-    df=pd.DataFrame( {"Symbol":code_list, "RSI":val_list }) 
-    df_sorted = df.sort_values(by=['RSI', 'Symbol'], ascending=[False, True]).round(1)
+    value_name="Unknown" 
+    if method==1:
+        value_name="RSI"
+    elif method==2:
+        value_name="buys"
+
+
+    df  = pd.DataFrame( {"Symbol":code_list, value_name:val_list, "MT":markets }) 
+    df_sorted = df.sort_values(by=[value_name, 'Symbol'], ascending=[False, True]).round(1)
+    df_sorted.to_csv(savefile,index=None)
+
 
     
     print("results, head "+str(maxcount) )    
     print(df_sorted.head(maxcount) )
 
     resultcodes=list(df_sorted['Symbol'])
-    resultrsi=list(df_sorted['RSI'])
+    resultrsi=list(df_sorted[value_name])
     
     #print("result---")
     #print(resultcodes)
@@ -216,7 +285,20 @@ def Go(incNASDAQ=True, incNYSE=True, maxcount=24 ):
 #------------------------------
 
 if __name__ =="__main__":
-    Go(incNASDAQ=True, incNYSE=True, maxcount=40)
+    #get_Summary_Single(symbol="NUTX", screener='america',exchange="NASDAQ")
+    get_Summary_Single(symbol="AVD", screener='america',exchange="NYSE")
+
+
+    if False:
+        Go(incNASDAQ=True, incNYSE=True, maxcount=40, savefile="Recommend-Oct25.csv",method=2)
+        printDictionary(whichMT='400', maxcount=10)
+        printDictionary(whichMT='500', maxcount=10)
+        printDictionary(whichMT='600', maxcount=10)
+        printDictionary(whichMT='700', maxcount=10)
+        printDictionary(whichMT='800', maxcount=10)
+
+
+    #get_All_Individually()
 
 
 
