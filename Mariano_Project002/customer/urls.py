@@ -6,9 +6,16 @@ app_name = 'customer'
 
 
 urlpatterns = [
-     # practice
-     path("one", views.one, name='nm-001'),
 
+     
+     # this is now home page since in main urls.py specify path('', RedirectView.as_view(url="customer/")), 
+     # and in settings.py specify ligin-redirect to home page so after login go to home page 
+     # which in turn come to here
+     path("", views.one, name='nm-001'),
+     
+
+     path("list", views.CustomerList.as_view(), name='nm-customer-list'),
+  
      # create customer using Model Forms (really good but class based views even better)
      path("two", views.createcustomer, name='nm-createcustomer1'),
      

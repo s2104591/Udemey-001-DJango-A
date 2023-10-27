@@ -14,7 +14,7 @@ from .models import Customer
 # Create your views here.
 
 def one(request):
-    return HttpResponse("hello One")
+    return HttpResponse("hello This is the Home Page for Customer")
 
 def thankyou(request):
     return render(request, 'customer/thankyou.html') 

@@ -7,10 +7,32 @@
     
 
 <ul>
-    {% for cus in  customerlist %}
-          <li> <a href="/customer/update/{{ cus.id }}"> firstname= {{ cus.firstname }} </a> </li>
-          
-          
-    {% endfor %}
+   
+
+    {%  if user.is_authenticated  %}
+
+      {% for cus in  customerlist %}
+            <li> <a href="/customer/update/{{ cus.id }}"> firstname= {{ cus.firstname }} </a> </li>
+  
+      {% endfor %}
+
+
+    <h1> you are logged In </h1>
+    <a href="{% url 'logout' %}?next={{ request.path }}">Click Here to Log Out and return here</a>
+    <br/><br/>
+    <a href="{% url 'logout' %}">Click Here to Log Out and Go Home</a>
+ 
+    {%  else    %}
+
+     
+    
+    <h1> you are logged OUT </h1>
+    <a href="{% url 'login' %}?next={{ request.path }} ">Click Here to Login and come back here </a>
+    <br/><br/>
+    <a href="{% url 'login' %}">Click Here to Login and Go Home Page  </a>
+
+
+    {% endif %}
+   
 
 </ul>

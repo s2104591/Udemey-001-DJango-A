@@ -162,10 +162,16 @@ manage optional feaures
     python manage.py createsuperuser
     user adminadmin1
     
-    python manage.py runserver 8000
-    http://127.0.0.1:8000/customer/two
-    http://127.0.0.1:8000/customer/register
-    http://127.0.0.1:8000/customer/list
+        cd Mariano_Project002
+        python manage.py runserver 8000
+
+        http://127.0.0.1:8000/customer/two       - Modal Forms
+        http://127.0.0.1:8000/customer/register  - ClassBasedView 
+        http://127.0.0.1:8000/customer/list
+        http://127.0.0.1:8000/customer/update/1
+
+        http://127.0.0.1:8000/accounts/login
+        
 
 
 
