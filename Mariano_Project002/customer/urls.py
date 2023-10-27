@@ -12,6 +12,8 @@ urlpatterns = [
      # and in settings.py specify ligin-redirect to home page so after login go to home page 
      # which in turn come to here
      path("", views.one, name='nm-001'),
+     path("restricted001", views.restricted001,name="nm-resttricted001"),
+     
      
 
      path("list", views.CustomerList.as_view(), name='nm-customer-list'),

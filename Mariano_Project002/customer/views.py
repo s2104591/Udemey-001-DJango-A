@@ -1,9 +1,14 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.urls import reverse_lazy, reverse 
+from django.contrib.auth.decorators import login_required
+
+
 
 from django.views.generic import CreateView,DetailView,ListView, UpdateView 
 from django.forms import Textarea
 from .models import Customer
+
+
 
 
 
@@ -15,6 +20,11 @@ from .models import Customer
 
 def one(request):
     return HttpResponse("hello This is the Home Page for Customer")
+
+@login_required
+def restricted001(request):
+    return render(request, 'customer/restricted001.html') 
+
 
 def thankyou(request):
     return render(request, 'customer/thankyou.html') 

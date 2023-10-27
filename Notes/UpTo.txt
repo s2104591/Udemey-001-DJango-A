@@ -166,11 +166,13 @@ manage optional feaures
         python manage.py runserver 8000
 
         http://127.0.0.1:8000/customer/two       - Modal Forms
-        http://127.0.0.1:8000/customer/register  - ClassBasedView 
+        http://127.0.0.1:8000/customer/register  - ClassBasedView .
         http://127.0.0.1:8000/customer/list
         http://127.0.0.1:8000/customer/update/1
 
         http://127.0.0.1:8000/accounts/login
+        http://127.0.0.1:8000/customer/restricted001
+
         
 
 
