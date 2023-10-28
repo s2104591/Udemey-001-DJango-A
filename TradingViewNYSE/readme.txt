@@ -1,4 +1,4 @@
-    cd tradingViewNYSE/002
+    cd tradingViewNYSE/003
     python run.py
 
 
