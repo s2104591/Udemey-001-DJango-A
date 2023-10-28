@@ -1,4 +1,4 @@
-from datetime import datetime
+
 
 #import pandas as pd
 #import pandas_ta as ta
@@ -10,6 +10,9 @@ from datetime import datetime
 
 
 print("ready pandas")
+
+
+from datetime import datetime
 
 def do_stringsave(txtfilename, string_tosave):
     dir="C:\\Users\\USER\\Downloads\\Udemy2023\\DJango\\course001\\Udemy-VSC-Django001\\tradingViewNYSE\\txtfiles\\"
