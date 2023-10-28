@@ -8,6 +8,31 @@ from tradingview_ta import *
 
 global_dict_codes={}
 
+##  -------------  Etrade ------------------------------
+def get_Multiple_Analysis_Etrade():
+
+    codes=get_Etrade_Codes2()
+    return get_Multiple_GENERIC(screeneruse="australia",exchange="ASX",codes=codes)
+    #return get_Multiple_GENERIC(screener="america",exchange="nasdaq",codes=codes)
+
+
+
+def get_Etrade_Codes2():
+    df = pd.read_csv("listcorpOct26.csv")
+    result1= list( df['Symbol'] )
+    result2=[]
+
+    for r in result1:
+        if type(r)==str and len(r)>=3:
+            result2.append(r)
+
+    #result=['MIN','WHC','WOR','BHP']
+    #print("type etradeCodes=",type(result))
+    updateDictionary(result2,'2000')
+    return result2
+# --------------------------------------------------------
+
+
 
 
 def get_multiple_NYSE():
@@ -20,7 +45,7 @@ def get_multiple_NASDAQ():
     codes=get_Nasdaq_Codes()
     return get_Multiple_GENERIC(exchange="nasdaq",codes=codes)
 
-def get_Multiple_GENERIC(exchange="nasdaq", codes=['TSLA',"AAPL"]):
+def get_Multiple_GENERIC(screeneruse="america", exchange="nasdaq", codes=['TSLA',"AAPL"]):
 
     printTimeStr()
     naslist=[]
@@ -42,7 +67,7 @@ def get_Multiple_GENERIC(exchange="nasdaq", codes=['TSLA',"AAPL"]):
 
     #print(naslist)    
 
-    analysis = get_multiple_analysis(screener="america", interval=Interval.INTERVAL_1_MINUTE,\
+    analysis = get_multiple_analysis(screener=screeneruse, interval=Interval.INTERVAL_1_MINUTE,\
         symbols=naslist)
         #symbols=["nasdaq:AAL", "nasdaq:AAOI", "nasdaq:AAON", "nasdaq:AAPL", "nasdaq:ABCB",\
         #        "nasdaq:ABCL", "nasdaq:ABCM", "nasdaq:ABNB", "nasdaq:ACAD", "nasdaq:ACAH"])
@@ -130,8 +155,14 @@ def get_NYSE_Codes_Merged():
     return result
 
 
+def getMinPrice():
+    return 10
+
 def get_NYSE_Codes(filename="SP500-Oct25.csv"):
     df=pd.read_csv(filename)
+    filt= df['Last']>=getMinPrice()
+    df=df[filt]
+    
     
     sp500= list( df.Symbol ) 
     print(len(sp500))
@@ -152,7 +183,11 @@ def get_NYSE_Codes(filename="SP500-Oct25.csv"):
 
 
 def get_Nasdaq_Codes():
-    df=pd.read_csv("nasdaq-Oct25.csv") 
+    df=pd.read_csv("nasdaq-Oct25.csv")
+    filt=df['Last']>= getMinPrice()
+    df=df[filt]
+
+
     result= list( df.Symbol )
     updateDictionary(result,'700')
 
@@ -201,22 +236,37 @@ def printDictionary(whichMT='500', maxcount=10):
 
 
 
-def Go(incNASDAQ=True, incNYSE=True, maxcount=24, savefile="Recommend-Oct25.csv",method=1 ):
+def GoEtrade(saveFile):
+    return GoMain(country="AUS",maxcountdisplay=200,savefile=saveFile)
+
+def GoNYSE(savefile):
+    return GoMain(country="USA",incNASDAQ=True,incNYSE=True,maxcountdisplay=80,savefile=savefile)    
+
+
+
+def GoMain(country="USA",incNASDAQ=True, incNYSE=True, maxcountdisplay=60, savefile="Recommend-Oct28.csv",method=2 ):
 
     mydict=[]
-    if incNASDAQ and incNYSE:
+
+    if country=="AUS":
+        mydict=get_Multiple_Analysis_Etrade()
+        
+        pass
+
+
+    elif incNASDAQ and incNYSE and country =="USA":
         dict1=get_multiple_NASDAQ()
         dict2=get_multiple_NYSE()
         merged_dict = {**dict1, **dict2} 
         mydict=merged_dict
 
-    elif incNASDAQ:
+    elif incNASDAQ and country =="USA":
         mydict=get_multiple_NASDAQ()
     
-    elif incNYSE:
+    elif incNYSE and country =="USA":
         mydict=get_multiple_NYSE()
     else:
-        print("specify atleat one of Nasday NYSE")
+        print("not recognized")
         return
     
     code_list=[]
@@ -270,7 +320,7 @@ def Go(incNASDAQ=True, incNYSE=True, maxcount=24, savefile="Recommend-Oct25.csv"
     
     count=0
     strlist=","
-    for i in range(maxcount):
+    for i in range(maxcountdisplay):
         strlist= strlist +resultcodes[i] +","+str(resultrsi[i])+","
         count+=1
         if count==10:

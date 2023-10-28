@@ -3,9 +3,14 @@ import NYSE_TradingTA as toolsTA
 
 
 reccomend=toolsTA.get_Summary_Single(symbol="RL", screener='america',exchange="NYSE")
-strresult,dfresult= toolsTA.Go(incNASDAQ=True, incNYSE=True, maxcount=40, savefile="Recommend-Oct25.csv",method=2)
-
 print(reccomend)
+
+
+
+#strresult,dfresult= toolsTA.GoNYSE("Recommend-USA-Oct28.csv")
+strresult,dfresult= toolsTA.GoEtrade("Recommend-AUS-Oct28.csv")
+
+
 print(strresult)
 print(dfresult.head(20))
 
