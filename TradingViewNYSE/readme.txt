@@ -1,5 +1,10 @@
     cd tradingViewNYSE/003
-    python run.py
+    
+    
+    python runNewYork.py
+    python runEtrade.py
+
+
 
     cd tradingViewNYSE/eperiment
     python run_001.py

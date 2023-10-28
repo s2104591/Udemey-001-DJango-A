@@ -275,7 +275,7 @@ def GoEtrade(saveFile):
     return GoMain(country="AUS",maxcountdisplay=200,savefile=saveFile)
 
 def GoNYSE(savefile):
-    return GoMain(country="USA",incNASDAQ=True,incNYSE=True,maxcountdisplay=80,savefile=savefile)    
+    return GoMain(country="USA",incNASDAQ=True,incNYSE=True,maxcountdisplay=200,savefile=savefile)    
 
 
 
