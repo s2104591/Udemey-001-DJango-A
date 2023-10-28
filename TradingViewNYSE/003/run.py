@@ -7,8 +7,8 @@ print(reccomend)
 
 
 
-strresult,dfresult= toolsTA.GoNYSE("Recommend-USA-Oct28.csv")
-#strresult,dfresult= toolsTA.GoEtrade("Recommend-AUS-Oct28.csv")
+#strresult,dfresult= toolsTA.GoNYSE("Recommend-USA-Oct28.csv")
+strresult,dfresult= toolsTA.GoEtrade("Recommend-AUS-Oct28.csv")
 
 
 print(strresult)

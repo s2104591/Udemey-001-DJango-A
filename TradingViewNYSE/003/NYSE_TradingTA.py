@@ -5,8 +5,43 @@ import pandas as pd
 import datetime
 
 from tradingview_ta import *
+from datetime import datetime as filedate
+
+
 
 global_dict_codes={}
+
+
+
+def do_stringsave(txtfilename, string_tosave):
+    dir="C:\\Users\\USER\\Downloads\\Udemy2023\\DJango\\course001\\Udemy-VSC-Django001\\tradingViewNYSE\\txtfiles\\"
+
+    with open( (dir+txtfilename), 'w') as file:    
+        file.write(string_tosave)
+
+    print("finished saving to:",txtfilename) 
+    return 1
+
+
+
+def getDatedTextFile(prefix):
+    # Get the current month
+    #m = datetime.now().month
+    #d = datetime.now().day
+
+    m = filedate.now().month
+    d = filedate.now().day
+
+
+    strmonth=str(m)
+    strday=str(d)
+    if d<10:
+        strday="0"+str(d)
+    
+    result= prefix+strmonth+"-"+strday+".txt"
+    print(result)
+    return result
+
 
 ##  -------------  Etrade ------------------------------
 def get_Multiple_Analysis_Etrade():
@@ -326,6 +361,18 @@ def GoMain(country="USA",incNASDAQ=True, incNYSE=True, maxcountdisplay=60, savef
         if count==10:
             strlist+="\n"
             count=0
+
+
+    prefix="unknown"
+    if country=="USA":
+        prefix="NewYork-"
+    elif country=="AUS":
+        prefix="Etrade"    
+        
+
+    txtfilename=getDatedTextFile(prefix)
+    do_stringsave(txtfilename, strlist)
+
 
 
     #print("\n\n",strlist)
