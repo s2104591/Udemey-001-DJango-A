@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.urls import reverse_lazy, reverse 
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.auth.forms import UserCreationForm
 
 
 from django.views.generic import CreateView,DetailView,ListView, UpdateView 
@@ -108,6 +108,13 @@ class CustomerList(ListView):
 class CustomerDetail(DetailView):
     model=Customer
 
+
+class SignUpView(CreateView):
+    form_class=UserCreationForm
+    success_url=reverse_lazy('login')
+    template_name="customer/signup.html"
+
+    pass
 
 
     

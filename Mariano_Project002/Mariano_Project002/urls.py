@@ -17,11 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import RedirectView
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('customer/',include('customer.urls')),
     path('admin/', admin.site.urls),
     path("accounts/",include('django.contrib.auth.urls')),
+
+    path("login/", auth_views.LoginView.as_view()),  # experiment
+    path("change-password/", auth_views.PasswordChangeView.as_view()),
+    
+
+
     path('', RedirectView.as_view(url="customer/")),   # home page is now "customer/"
 
 ]

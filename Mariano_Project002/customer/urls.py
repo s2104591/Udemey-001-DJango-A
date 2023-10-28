@@ -28,6 +28,7 @@ urlpatterns = [
 
 
      path('detail/<int:pk>/',views.CustomerDetail.as_view(),name='nm-customer-detail'),
+     path('signup/',views.SignUpView.as_view(),name="nm-signup"),
  
 
 
