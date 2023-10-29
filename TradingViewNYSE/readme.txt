@@ -15,5 +15,7 @@
 
     csv
     C:\\Users\\USER\\Downloads\\Udemy2023\\DJango\\course001\\Udemy-VSC-Django001\\TradingViewNYSE\\csvFiles\\
+
+    C:\\Users\\USER\\Downloads\\Udemy2023\\DJango\\course001\\Udemy-VSC-Django001\\TradingViewNYSE\\TA-reccomend\\
     
  

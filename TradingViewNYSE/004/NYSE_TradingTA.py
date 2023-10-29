@@ -12,7 +12,11 @@ from datetime import datetime as filedate
 global_dict_codes={}
 
 
-def getDirText():
+def getDirReccomend():
+    return "C:\\Users\\USER\\Downloads\\Udemy2023\\DJango\\course001\\Udemy-VSC-Django001\\TradingViewNYSE\\TA-reccomend\\"
+
+
+def getDirText_OLD():
     return "C:\\Users\\USER\\Downloads\\Udemy2023\\DJango\\course001\\Udemy-VSC-Django001\\tradingViewNYSE\\txtfiles\\"
 
 def getDirCSV():
@@ -24,7 +28,7 @@ def getCSVDir():
 
 
 def do_stringsave(txtfilename, string_tosave):
-    dir=getDirText()
+    dir=getDirReccomend()
 
     with open( (dir+txtfilename), 'w') as file:    
         file.write(string_tosave)
@@ -364,7 +368,7 @@ def GoMain(country="USA",incNASDAQ=True, incNYSE=True, maxcountdisplay=60, metho
     df_sorted = df.sort_values(by=[value_name, 'Symbol'], ascending=[False, True]).round(1)
 
     #savefile=getDirCSV()+savefile
-    savefile=getDirCSV()+getDatedCSVFile(prefix+"_TA_Rec")
+    savefile=getDirReccomend() +getDatedCSVFile(prefix+"_TA_Rec")
     df_sorted.to_csv(savefile,index=None)
 
 

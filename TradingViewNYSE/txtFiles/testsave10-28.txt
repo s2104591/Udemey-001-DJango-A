@@ -1,6 +1,0 @@
-hello
-saving
-this
-string
-bye
-002
