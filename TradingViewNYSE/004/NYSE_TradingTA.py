@@ -11,16 +11,27 @@ from datetime import datetime as filedate
 
 global_dict_codes={}
 
+def sampleCode():
+    import NYSE_TradingTA as toolsTA
+    str_single=toolsTA.get_Summary_Single(symbol="RL", screener='america',exchange="NYSE")
+    strresult,dfresult= toolsTA.GoNYSE()
+    strresult,dfresult= toolsTA.GoEtrade()
+
+
+
+    pass
+
+
+
 
 def getDirReccomend():
-    return "C:\\Users\\USER\\Downloads\\Udemy2023\\DJango\\course001\\Udemy-VSC-Django001\\TradingViewNYSE\\TA-reccomend\\"
+    #return "C:\\Users\\USER\\Downloads\\Udemy2023\\DJango\\course001\\Udemy-VSC-Django001\\TradingViewNYSE\\TA-reccomend\\"
+    return "C:\\PyCharm2022-MarianoRico\\803-GUI-Sept\\minePyCodeGenerator\\TradingView\\reccomend\\"
 
-
-def getDirText_OLD():
-    return "C:\\Users\\USER\\Downloads\\Udemy2023\\DJango\\course001\\Udemy-VSC-Django001\\tradingViewNYSE\\txtfiles\\"
 
 def getDirCSV():
-    return "C:\\Users\\USER\\Downloads\\Udemy2023\\DJango\\course001\\Udemy-VSC-Django001\\TradingViewNYSE\\csvFiles\\"
+    #return "C:\\Users\\USER\\Downloads\\Udemy2023\\DJango\\course001\\Udemy-VSC-Django001\\TradingViewNYSE\\csvFiles\\"
+    return "C:\\PyCharm2022-MarianoRico\\803-GUI-Sept\\minePyCodeGenerator\\TradingView\\csvFiles\\"
 
 def getCSVDir():
     return getDirCSV()    
