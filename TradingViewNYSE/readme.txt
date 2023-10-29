@@ -12,4 +12,8 @@
 
 
     https://tvdb.brianthe.dev/   
+
+    csv
+    C:\\Users\\USER\\Downloads\\Udemy2023\\DJango\\course001\\Udemy-VSC-Django001\\TradingViewNYSE\\csvFiles\\
+    
  
