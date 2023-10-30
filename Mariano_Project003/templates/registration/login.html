@@ -1,0 +1,27 @@
+{% if form.errors %}
+    <p>Your username or password was incorrect. Try again.</p>
+
+    <h1>LOGIN_REDIRECT_URL="/"  # mariano  where to go after login, account/profile by default </h1>
+
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+        <p>You dont have permission for this page</p>
+
+    {% else %}
+        <p>Please login to see this page</p>
+    {% endif %}
+{% endif %}
+
+<form method='post' action="{% url 'login' %}">
+{% csrf_token %}
+{{form.username.label_tag}}
+{{form.username}}
+
+{{form.password.label_tag}}
+{{form.password}}
+<input type="submit" value='login'>
+<input type="hidden" name='next' value="{{next}}">
+ 
+</form> 
