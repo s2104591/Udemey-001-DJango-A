@@ -21,6 +21,16 @@ urlpatterns = [
      path('logout/',views.Logout,name="nm-logout"),
      path('login1/',views.Login,name="nm-login"),
      path('login2/',auth_views.LoginView.as_view(),name="nm-login2"),
+     path("change-password/", auth_views.PasswordChangeView.as_view()),
+     path("thankyou/", views.thankyou, name ="nm-thankyou"),
+
+
+     # Project 003
+     
+     #path('profile/<int:pk>/',views.CustomerProfile,name='nm-customer-profile'),
+     path('profile/<int:pk>/',views.CustomerProfile,name='nm-customer-profile'),
+     path('update/<int:pk>/',views.CustomerUpdate.as_view(),name='nm-customer-update'),
+
 
 
 

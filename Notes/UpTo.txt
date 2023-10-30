@@ -185,6 +185,33 @@ manage optional feaures
     python manage.py createsuperuser
 
 
+---------------------------------------------------------
+    django-admin startproject Mariano_Project003
+    cd Mariano_Project003
+    python manage.py startapp customer
+
+        cd Mariano_Project003
+        python manage.py runserver 8000
+
+        python manage.py makemigrations
+        python manage.py migrate
+
+    http://127.0.0.1:8000/
+    http://127.0.0.1:8000/customer/restricted001
+    http://127.0.0.1:8000/customer/signup
+    
+    http://127.0.0.1:8000/customer/login1
+    http://127.0.0.1:8000/customer/login2
+    http://127.0.0.1:8000/customer/logout
+    http://127.0.0.1:8000/customer/change-password
+    http://127.0.0.1:8000/customer/thankyou
+
+    http://127.0.0.1:8000/customer/profile/1
+
+
+
+
+
 
 
 
