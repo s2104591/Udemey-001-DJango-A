@@ -23,7 +23,7 @@ class Customer(models.Model):
     
     def __str__(self):
         #return f"userID={self.userID}  username={self.userName}  preference1= {self.preference1}"
-        return f"{self.userName} {self.firstname} {self.lastname} {self.email}  preference1= {self.preference1}"
+        return f"ID={self.id} userID={self.userID} {self.userName} {self.firstname} {self.lastname} {self.email}  preference1= {self.preference1}"
 
     pass
 

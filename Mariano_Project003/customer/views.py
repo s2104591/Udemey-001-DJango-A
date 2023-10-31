@@ -69,14 +69,23 @@ def getCustomerAccount(uid, uname, email,fname,lname):
 
 
 
+class CustomerSummary22(LoginRequiredMixin ,UpdateView):
+    
+        model=Customer
+        fields = "__all__"
+        success_url= reverse_lazy("customer:nm-thankyou")
+        template_name='customer/summary2.html'
 
-class CustomerSummary2(LoginRequiredMixin ,UpdateView):
+
+
+
+class CustomerSummary22(LoginRequiredMixin ,UpdateView):
 
         form_class = MySummaryForm 
         #model=Customer
         #fields = ['preference1']
         success_url= reverse_lazy("customer:nm-logout")
-        template_name='customer/summary2.html'
+        template_name='customer/summary22a.html'
 
         def get_initial(self):
             print("Update View Initial")
@@ -89,6 +98,9 @@ class CustomerSummary2(LoginRequiredMixin ,UpdateView):
             user_email= self.request.user.email
             user_firstname= self.request.user.first_name
             user_lastname= self.request.user.last_name
+
+            ispost=self.request.POST
+            print("ispost=",ispost)
 
 
 
@@ -106,6 +118,34 @@ class CustomerSummary2(LoginRequiredMixin ,UpdateView):
 
             #print("UpdateView get_Object, id =",id)
             return cust
+
+
+def customersummary1(request):
+    
+    
+    template= "customer/summary1.html"
+    if request.method =="POST":
+        form = MySummaryForm(request.POST)
+        param   =   {"form":form}
+        if form.is_valid ():
+            form.save()  # only is form is a  ModelForm
+            print(form.cleaned_data)
+            return redirect(reverse("customer:nm-thankyou") )
+        else:
+            return render(request, template, context=param)       
+    else:
+        user_id     = request.user.id
+        user_name   =""
+        #user_name   = request.user_name
+        print("userid",user_id, user_name)
+
+        #cust=getCustomerAccount(user_id,user_name)
+
+
+        form    =   MySummaryForm()
+        param   =   {"form":form}
+
+        return render(request, template, context=param)
 
 
 

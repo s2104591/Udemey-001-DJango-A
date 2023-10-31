@@ -34,7 +34,8 @@ urlpatterns = [
     path('customer/',include('customer.urls')),
     path("accounts/",include('django.contrib.auth.urls')),
 
-    path("login/", auth_views.LoginView.as_view()),  # experiment
+    
+
     path("change-password/", auth_views.PasswordChangeView.as_view()),
     path('', RedirectView.as_view(url="customer/")),   # home page is now "customer/"
 

@@ -20,10 +20,7 @@ urlpatterns = [
      
      #path('signup1/',views.SignUpView.as_view(),name="nm-signup"),
      path('register/',views.register,name="nm-signup"),
-
-
      path('logout/',views.Logout,name="nm-logout"),
-     
      path('login/',views.Login,name="nm-login"),
 
      #path('login1/',views.Login,name="nm-login1"),
@@ -42,7 +39,10 @@ urlpatterns = [
      #path('update/<int:pk>/',views.CustomerUpdate.as_view(),name='nm-customer-update'),
      #path('summary1/',views.customersummary1,name='nm-customer-summary1'),
 
-     path('summary/',views.CustomerSummary2.as_view(),name='nm-customer-summary2'),
+     path('summary22/',views.CustomerSummary22.as_view(),name='nm-customer-summary22'),
+     path('summary/<int:pk>',views.CustomerSummary22.as_view(),name='nm-customer-summary2'),
+     path('summary1/',views.customersummary1,name='nm-customer-summary1'),
+
 
 
 

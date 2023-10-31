@@ -24,33 +24,25 @@
     
 <body>
 
-    <h1 class="fontblue"> Summary2 Register with ClassBased View </h1>
-        {% csrf_token %}
+    <h1 class="fontblue"> Summary22 Register with ClassBased View </h1>
+    
         <div class='container dashedblack'>
             <form method="POST">
                 {% csrf_token %}
                   
-                <h1 class="bluefont">  Summary </h1>
-                {{form.firstname.value}}
-                {{form.lastname.value}}
-                {{form.email.value}}
-                {{form.userName.value}}
-               
-            
+                <h1 class="bluefont">  Summary 22  B</h1>
                 <h1> here Start --  </h1>
-                <br/>
-             
+
+                <!-- works fine below -->
                 <div class='mb-3'>
-                    {{form.preference1.label_tag}}
-                    {{form.preference1}}
+                {{form.preference1.label_tag}}
+                {{form.preference1}}
                 </div>
 
+                
+               
                 <h1> here END --  </h1>
  
-                <div>
-                    {{message}}
-                
-                </div>
     
                 <br/><br/><br/>
                 <input type="submit" value ="update002"   class= 'btn btn-primary'>

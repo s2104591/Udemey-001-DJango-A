@@ -118,7 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-LOGIN_REDIRECT_URL="/customer/summary"  # mariano  where to go after login, account/profile by default
+LOGIN_REDIRECT_URL="/customer/summary22"  # mariano  where to go after login, account/profile by default
 
 
 # Default primary key field type

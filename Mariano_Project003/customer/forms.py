@@ -27,10 +27,16 @@ class MySignForm(ModelForm):
 class MySummaryForm(ModelForm):
     class Meta:
         model=Customer
-        fields="__all__"
+        #fields="__all__"
+        fields=['userName','preference1']
         labels={ "preference1":"your 1st preference"}
 
-        
+    def __init__(self, *args, **kwargs):
+        # Important , need to include all the fields specified in fields on the template, otherwise won't submit 
+        # however can make them readonly or hidden as below
+        super(ModelForm, self).__init__(*args, **kwargs)
+        self.fields['userName'].widget.attrs['readonly'] = True  
+        self.fields['userName'].widget = forms.HiddenInput()  
 
     pass
 
