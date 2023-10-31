@@ -1,0 +1,57 @@
+def customersummary1(request):
+
+    
+    template= "customer/summary1.html"
+    if request.method =="POST":
+        form = MySummaryForm(request.POST)
+        param   =   {"form":form}
+        if form.is_valid ():
+            form.save()  # only is form is a  ModelForm
+            print(form.cleaned_data)
+            return redirect(reverse("customer:nm-thankyou") )
+        else:
+            return render(request, template, context=param)       
+    else:
+        user_id     = request.user.id
+        user_name   = request.username
+        cust=getCustomerAccount(user_id,user_name)
+
+
+        form    =   MySummaryForm()
+        param   =   {"form":form}
+
+        return render(request, template, context=param)
+
+
+
+def getUserID_OLD(uname):
+    usercount= User.objects.filter(username=uname).count()
+    result=0
+    if usercount==0:
+        result=0
+    else:
+        user=User.objects.get(username=uname)
+        result=int( User.id )
+        print("found uid=",result)
+
+    return result    
+
+
+
+## ----------------------------------   SignUp  can only take in username and passwords but NOT email when signing in
+
+class SignUpView(CreateView):
+    form_class=UserCreationForm
+    email = forms.EmailField(required=True, help_text="Enter a valid email address.")    
+    #fields = ('username', 'email', 'password1', 'password2')
+
+    
+    #form_class=MySignForm
+    model = User
+    success_url=reverse_lazy('login')
+    template_name="customer/signup.html"
+
+    pass
+
+    
+

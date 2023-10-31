@@ -24,7 +24,7 @@
     
 <body>
 
-    <h1 class="fontblue"> Register with ClassBased View </h1>
+    <h1 class="fontblue"> Summary2 Register with ClassBased View </h1>
 
         {% csrf_token %}
 
@@ -36,30 +36,32 @@
             <form method="POST">
                 {% csrf_token %}
         
-                
+            
         
-                
-        
-                <h1 class="bluefont"> for loop 024 </h1>
-
+                <h1 class="bluefont">  Summary </h1>
+                {{form.firstname.value}}
+                {{form.lastname.value}}
+                {{form.email.value}}
+                {{form.userName.value}}
                
+
                 
-                <!-- works fine below -->
-                {% for fld in form %}
-                
-                
-                
+                <h1> here Start --  </h1>
+                <br/>
+             
                 <div class='mb-3'>
-                    {{fld.label_tag}} <br/>    
-                    {{fld}}
-                    {{fld.errors}}
-               </div>
+                    {{form.preference1.label_tag}}
+                    {{form.preference1}}
+                </div>
+
+                <h1> here END --  </h1>
+
+
+
+
                
-
-
-        
-                {% endfor %}
-
+                
+ 
                 <div>
                     {{message}}
                 
@@ -68,7 +70,7 @@
         
              
                 <br/><br/><br/>
-                <input type="submit" value ="update"   class= 'btn btn-primary'>
+                <input type="submit" value ="update002"   class= 'btn btn-primary'>
                 <input type="button" value ="javascript" class= 'btn btn-primary', id="btnJS">
                 
 

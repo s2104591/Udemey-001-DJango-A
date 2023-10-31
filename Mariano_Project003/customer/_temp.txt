@@ -35,4 +35,77 @@
     ]
 
 
+    ----------
+
+
+# http://127.0.0.1:8000/customer/profile/1
+def CustomerProfileOLD(request):
+
+    uid=request.user.id
+    print("request userID=", uid)
+
+    if uid==None:
+        return redirect(reverse("login" ))        
+        pass
+
+
+    
+    profilecount= Customer.objects.filter(userID=uid).count()
+    if profilecount==0:
+        cust=Customer(userID=uid, preference1="none")
+        cust.save()
+        print("added profile")
+        pass
+    else:
+        print("no profile added")
+
+
+
+    #return CustomerUpdate.as_view() 
+    #return HttpResponse("hello This is the Temporary Profile Page for Customer")
+    #return redirect(reverse("nm-customer-update" ))
+    #return HttpResponseRedirect(f'/customer/update/{uid}/')
+    return HttpResponseRedirect (CustomerUpdate.as_view() )
+    pass
+
+
+ # for reference
+class ReviewForm(ModelForm):
+    class Meta:
+        model=RentalModel
+        fields=["firstname","surname",'rating',"comments"]
+        labels={ "rating":"your rating"}
+
+        widgets = {
+            "comments": Textarea(attrs={"cols": 20, "rows": 4, 'class':'dashedred'}),
+        }
+        
+        error_messages={
+            'rating':{
+                'min_value':'min value is 18',
+                'max_value':'max value is 75',
+
+
+            }
+        }
+
+
+    pass
+
+
+                   <!-- works fine below -->
+                {% for fld in form %}                
+                <div class='mb-3'>
+                    {{fld.label_tag}} <br/>    
+                    {{fld.value }}
+                    {{fld }}
+                    {{fld.errors}}
+               </div>
+        
+                {% endfor %}
+
+   
+
+
+
     
