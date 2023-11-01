@@ -30,15 +30,34 @@
             <form method="POST">
                 {% csrf_token %}
                   
-                <h1 class="bluefont">  Summary 22  B</h1>
+                <h1 class="bluefont">  Summary 22 B  {{form.userName.value}} </h1>
                 <h1> here Start --  </h1>
-
-                <!-- works fine below -->
-                <div class='mb-3'>
-                {{form.preference1.label_tag}}
-                {{form.preference1}}
+                
+                <div class='hidden'>
+                    {{form.userName.label_tag}} {{form.userName}}
                 </div>
 
+                <div class='mb-3'>    
+                    {{form.preference1.label_tag}}{{form.preference1}}
+                    {{form.preference1.errors}}
+                </div>
+                 
+               
+
+                <h1> here Start -- 002  </h1>
+
+
+                <!-- works fine below -->
+                {% for fld in form %}
+        
+                    <div class='mb-3'>
+                        {{fld.label_tag}}
+                        {{fld}}
+                        {{fld.errors}}
+                    <div>
+                    
+                        
+                {% endfor %}
                 
                
                 <h1> here END --  </h1>

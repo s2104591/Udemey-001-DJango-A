@@ -24,27 +24,28 @@
     
 <body>
 
-    <h1 class="fontblue"> Summary22 Register with ClassBased View </h1>
+    
     
         <div class='container dashedblack'>
             <form method="POST">
                 {% csrf_token %}
                   
-                <h1 class="bluefont">  Summary 22 A  {{form.userName.value}} </h1>
-                <h1> here Start --  </h1>
+                <h2 class="bluefont">  
+                    Classed Based Views Summary 22 A  <br>  
+                    {{form.userName.value}} 
+                </h2>
                 
+                <h4> Hidden Items Necessary otherwise form will not submit  --  </h4>
+                <div class='hidden'>
+                    {{form.userName.label_tag}} {{form.userName}}
+                </div>
 
-                <!-- works fine below -->
-                {% for fld in form %}
-        
-                    <div class='mb-3'>
-                        {{fld.label_tag}}
-                    <div>
-                    {{fld}}
-                    {{fld.errors}}
-                        
-                {% endfor %}
-                
+                <h1> here Start --  </h1>
+                <div class='mb-3'>    
+                    {{form.preference1.label_tag}}{{form.preference1}}
+                    {{form.preference1.errors}}
+                </div>
+                  
                
                 <h1> here END --  </h1>
  
